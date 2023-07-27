@@ -1,11 +1,12 @@
-// let objectArray = [];
-let objectArray = [];
+let objectArray = JSON.parse(localStorage.getItem("objectArray"));
 const container = document.querySelector(".container");
-console.log(objectArray);
 
 if (!objectArray) {
   console.log(`empty`);
+  objectArray = [];
+} else {
   objectArray = JSON.parse(localStorage.getItem("objectArray"));
+  console.log(objectArray);
   render();
 }
 
