@@ -1,10 +1,13 @@
-let objectArray = JSON.parse(localStorage.getItem("objectArray"));
 // let objectArray = [];
-
+let objectArray = [];
 const container = document.querySelector(".container");
 console.log(objectArray);
 
-render();
+if (!objectArray) {
+  console.log(`empty`);
+  objectArray = JSON.parse(localStorage.getItem("objectArray"));
+  render();
+}
 
 const form = document.querySelector(".form");
 if (form) {
